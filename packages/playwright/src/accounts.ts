@@ -1,19 +1,24 @@
-const fs = require("fs");
-const path = require("path");
+import { existsSync, readFileSync } from 'fs';
+import type { Config } from './config.js';
 
-function load(cfg) {
-  let allAccounts = [];
+export interface Account {
+  email: string;
+  password: string;
+}
 
-  if (cfg.comboFile && fs.existsSync(cfg.comboFile)) {
-    const raw = fs.readFileSync(cfg.comboFile, "utf8");
+export function loadAccounts(cfg: Config): Account[] {
+  let allAccounts: Account[] = [];
+
+  if (cfg.comboFile && existsSync(cfg.comboFile)) {
+    const raw = readFileSync(cfg.comboFile, 'utf8');
     const lines = raw.split(/\r?\n/).filter(Boolean);
     allAccounts = lines
       .map((line) => {
-        const sep = line.includes(":") ? ":" : "|";
+        const sep = line.includes(':') ? ':' : '|';
         const parts = line.split(sep);
         return {
-          email: (parts[0] || "").trim(),
-          password: (parts[1] || "").trim(),
+          email: (parts[0] ?? '').trim(),
+          password: (parts[1] ?? '').trim(),
         };
       })
       .filter((a) => a.email && a.password);
@@ -24,7 +29,7 @@ function load(cfg) {
   }
 
   if (!allAccounts.length) {
-    console.error("  [ERR] No accounts found. Add to config.json accounts[] or set comboFile");
+    console.error('  [ERR] No accounts. Add to config.json accounts[] or set comboFile');
     process.exit(1);
   }
 
@@ -36,5 +41,3 @@ function load(cfg) {
 
   return allAccounts.slice(skip);
 }
-
-module.exports = { load };
