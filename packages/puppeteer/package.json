@@ -1,0 +1,20 @@
+{
+  "name": "@ampcode/puppeteer",
+  "version": "1.1.0",
+  "description": "Account checker for auth.ampcode.com — Puppeteer real-browser edition",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node index.js",
+    "setup": "node -e \"require('./src/cui').setup()\""
+  },
+  "keywords": ["ampcode", "checker", "puppeteer"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^17.4.2",
+    "puppeteer-real-browser": "^1.4.4"
+  }
+}

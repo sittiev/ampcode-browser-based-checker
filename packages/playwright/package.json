@@ -1,0 +1,21 @@
+{
+  "name": "@ampcode/playwright",
+  "version": "2.0.0",
+  "description": "Account checker for auth.ampcode.com — Playwright real-browser edition",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node index.js",
+    "setup": "node -e \"require('./src/cui').setup()\"",
+    "postinstall": "npx playwright install chromium"
+  },
+  "keywords": ["ampcode", "checker", "playwright"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "dotenv": "^17.4.2",
+    "playwright": "^1.52.0"
+  }
+}

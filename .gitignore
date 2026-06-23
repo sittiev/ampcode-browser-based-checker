@@ -1,0 +1,12 @@
+node_modules/
+.env
+.env.local
+results/
+chrome-profile/
+logs/
+*.log
+.DS_Store
+Thumbs.db
+ampcode_login_pass.txt
+results.txt
+package-lock.json

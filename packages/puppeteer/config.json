@@ -1,0 +1,26 @@
+{
+  "threads": 2,
+  "startLine": 1,
+  "headless": false,
+  "chromeProfile": "",
+  "outputDir": "results",
+  "comboFile": "ampcode_login_pass.txt",
+  "accounts": [],
+  "viewport": { "width": 1280, "height": 800 },
+  "delay": { "min": 1500, "max": 3500 },
+  "timeout": {
+    "navigation": 30000,
+    "element": 15000,
+    "login": 20000
+  },
+  "proxy": {
+    "enabled": false,
+    "list": ""
+  },
+  "ui": {
+    "showProgress": true,
+    "showPerAccount": true,
+    "compact": false
+  },
+  "cui": false
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ampcode-checker-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AmpCode account checker — multi-engine monorepo (Playwright + Puppeteer)",
+  "scripts": {
+    "playwright": "pnpm --filter @ampcode/playwright start",
+    "puppeteer": "pnpm --filter @ampcode/puppeteer start",
+    "playwright:setup": "pnpm --filter @ampcode/playwright run setup",
+    "puppeteer:setup": "pnpm --filter @ampcode/puppeteer run setup"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
